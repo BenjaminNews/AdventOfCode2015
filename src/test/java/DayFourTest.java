@@ -6,11 +6,11 @@ public class DayFourTest {
 
     @Test
     public void givenInput_abcdef_returns_609043() {
-        assertEquals(609043, DayFour.partOne("abcdef"));
+        assertEquals(609043, DayFour.partOne("abcdef", 5));
     }
 
     @Test
     public void givenInput_pqrstuv_returns_1048970() {
-        assertEquals(1048970, DayFour.partOne("pqrstuv"));
+        assertEquals(1048970, DayFour.partOne("pqrstuv", 5));
     }
 }
