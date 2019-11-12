@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class DayFive {
 
     public static int partOne(String input) {
