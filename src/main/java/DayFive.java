@@ -33,33 +33,20 @@ public class DayFive {
         return false;
     }
 
-
-//    It contains a pair of any two letters that appears at least twice in the string without overlapping,
-//    like xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
-//
-//    It contains at least one letter which repeats with exactly one letter between them, like xyx, abcdefeghi (efe), or even aaa.
-//
-
-
     public static int partTwo(String input) {
         int count = 0;
-        for(String inputLine : input.split("\n")) {
-            if (containsPair(inputLine)) {
-                if (containsSpacedPair(inputLine)) {
+        for(String inputLine : input.split("\n"))
+            if (containsPair(inputLine))
+                if (containsSpacedPair(inputLine))
                     count++;
-                }
-            }
-        }
         return count;
     }
 
     private static boolean containsSpacedPair(String input) {
         char[] allCharacters = input.toCharArray();
-        for(int i = 0; i + 2 < allCharacters.length; i++) {
-            if(allCharacters[i] == allCharacters[i + 2]) {
+        for(int i = 0; i + 2 < allCharacters.length; i++)
+            if(allCharacters[i] == allCharacters[i + 2])
                 return true;
-            }
-        }
         return false;
     }
 
@@ -67,9 +54,8 @@ public class DayFive {
         char[] allCharacters = input.toCharArray();
         for(int i = 0; i + 1 < allCharacters.length; i++) {
            String checkString = String.valueOf(allCharacters[i]) + String.valueOf(allCharacters[i + 1]);
-           if(input.substring(i + 2).contains(checkString)) {
+           if(input.substring(i + 2).contains(checkString))
                return true;
-           }
         }
         return false;
     }
@@ -79,7 +65,7 @@ public class DayFive {
         System.out.printf("%nPart two: %d", DayFive.partTwo(input));
     }
 
-    private static String input = "rthkunfaakmwmush\n" +
+    private static String input =   "rthkunfaakmwmush\n" +
                                     "qxlnvjguikqcyfzt\n" +
                                     "sleaoasjspnjctqt\n" +
                                     "lactpmehuhmzwfjl\n" +
