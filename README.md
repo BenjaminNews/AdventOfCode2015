@@ -1,1 +1,1 @@
-# Default project structure for IntelliJ
+# Advent Of Code 2015
