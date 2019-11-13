@@ -42,7 +42,7 @@ public class DayEleven {
         lastLetterValue = passwordCharacters[passwordCharacters.length - 1];
         int i = 1;
         if(lastLetterValue != 122) {
-            passwordCharacters[passwordCharacters.length - 1] = (char) (lastLetterValue + 1);
+            passwordCharacters[passwordCharacters.length - i] = (char) (lastLetterValue + 1);
         } else {
             updateCharacters(i, ++i);
             if(lastLetterValue != 122) {
