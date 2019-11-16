@@ -2,8 +2,6 @@ import java.util.Arrays;
 
 public class DayTen {
 
-    private static int[] lookSayValues = new int[5_103_798];
-
     private static String lookAndSay(String input) {
         int[] numbers = Arrays.stream(input.split("")).mapToInt(Integer::parseInt).toArray();
         int[] result = new int[Integer.MAX_VALUE / 10];
@@ -32,18 +30,15 @@ public class DayTen {
         return -1;
     }
 
-    public static int partOne(String input, int count) {
+    public static int performRounds(String input, int count) {
         for(int i = 1; i <= count; i++) {
             input = lookAndSay(input);
-            if(i % 10 == 0)
-                System.out.println(i);
         }
         return input.length();
     }
 
     public static void main(String[] args) {
-        System.out.printf("Part One: %s%n", DayTen.partOne("1113122113", 40));
-        System.out.printf("Part One: %s", DayTen.partOne("1113122113", 50));
-
+        System.out.printf("Part One: %s%n", DayTen.performRounds("1113122113", 40));
+        System.out.printf("Part One: %s", DayTen.performRounds("1113122113", 50));
     }
 }
