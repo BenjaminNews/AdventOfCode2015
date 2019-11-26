@@ -50,7 +50,6 @@ public class DaySixteen {
         return -1;
     }
 
-
     public static void main(String[] args) {
         DaySixteen adventOfCodeDaySixteen = new DaySixteen();
         adventOfCodeDaySixteen.setup(input);
@@ -102,10 +101,7 @@ public class DaySixteen {
             if(perfumes == perfumesCount && perfumes != -1) {
                 matchCount++;
             }
-            if(matchCount == 3) {
-                return true;
-            }
-            return false;
+            return matchCount == 3;
         }
 
         public boolean matchPartTwo(int childrenCount, int catsCount, int samoyedsCount, int pomeraniansCount, int akitasCount, int vizslasCount, int goldfishCount, int treesCount, int carsCount, int perfumesCount) {
@@ -129,7 +125,6 @@ public class DaySixteen {
             if (vizslas == vizslasCount && vizslas != -1) {
                 matchCount++;
             }
-
             if (goldfish < goldfishCount && goldfish != -1) {
                 matchCount++;
             }
@@ -142,10 +137,7 @@ public class DaySixteen {
             if(perfumes == perfumesCount && perfumes != -1) {
                 matchCount++;
             }
-            if(matchCount == 3) {
-                return true;
-            }
-            return false;
+            return matchCount == 3;
         }
     }
 
