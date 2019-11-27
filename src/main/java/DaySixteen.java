@@ -71,30 +71,14 @@ public class DaySixteen {
 
         public boolean match(int childrenCount, int catsCount, int samoyedsCount, int pomeraniansCount, int akitasCount, int vizslasCount, int goldfishCount, int treesCount, int carsCount, int perfumesCount) {
             int matchCount = 0;
-            if (children == childrenCount && children != -1) {
-                matchCount++;
-            }
-            if (cats == catsCount && cats != -1) {
-                matchCount++;
-            }
-            if (samoyeds == samoyedsCount && samoyeds != -1) {
-                matchCount++;
-            }
-            if (pomeranians == pomeraniansCount && pomeranians != -1) {
-                matchCount++;
-            }
+            matchCount = getMatchCountForCorrectValues(catsCount, pomeraniansCount, treesCount, goldfishCount, childrenCount, samoyedsCount, cats, pomeranians, trees, goldfish, children, samoyeds);
             if (akitas == akitasCount && akitas != -1) {
                 matchCount++;
             }
             if (vizslas == vizslasCount && vizslas != -1) {
                 matchCount++;
             }
-            if (goldfish == goldfishCount && goldfish != -1) {
-                matchCount++;
-            }
-            if (trees == treesCount && trees != -1) {
-                matchCount++;
-            }
+
             if (cars == carsCount && cars != -1) {
                 matchCount++;
             }
@@ -105,39 +89,43 @@ public class DaySixteen {
         }
 
         public boolean matchPartTwo(int childrenCount, int catsCount, int samoyedsCount, int pomeraniansCount, int akitasCount, int vizslasCount, int goldfishCount, int treesCount, int carsCount, int perfumesCount) {
-            int matchCount = 0;
-            if (children == childrenCount && children != -1) {
-                matchCount++;
-            }
+            int matchCount = getMatchCountForCorrectValues(childrenCount, samoyedsCount, akitasCount, vizslasCount, carsCount, perfumesCount, children, samoyeds, akitas, vizslas, cars, perfumes);;
             if (cats > catsCount && cats != -1) {
-                matchCount++;
-            }
-            if (samoyeds == samoyedsCount && samoyeds != -1) {
                 matchCount++;
             }
             if (pomeranians < pomeraniansCount && pomeranians != -1) {
                 matchCount++;
             }
-            if (akitas == akitasCount && akitas != -1) {
-
-                matchCount++;
-            }
-            if (vizslas == vizslasCount && vizslas != -1) {
+            if (trees > treesCount && trees != -1) {
                 matchCount++;
             }
             if (goldfish < goldfishCount && goldfish != -1) {
                 matchCount++;
             }
-            if (trees > treesCount && trees != -1) {
+            return matchCount == 3;
+        }
+
+        private int getMatchCountForCorrectValues(int childrenCount, int samoyedsCount, int akitasCount, int vizslasCount, int carsCount, int perfumesCount, int children, int samoyeds, int akitas, int vizslas, int cars, int perfumes) {
+            int matchCount = 0;
+            if (children == childrenCount && children != -1) {
+                matchCount++;
+            }
+            if (samoyeds == samoyedsCount && samoyeds != -1) {
+                matchCount++;
+            }
+            if (akitas == akitasCount && akitas != -1) {
+                matchCount++;
+            }
+            if (vizslas == vizslasCount && vizslas != -1) {
                 matchCount++;
             }
             if (cars == carsCount && cars != -1) {
                 matchCount++;
             }
-            if(perfumes == perfumesCount && perfumes != -1) {
+            if (perfumes == perfumesCount && perfumes != -1) {
                 matchCount++;
             }
-            return matchCount == 3;
+            return matchCount;
         }
     }
 
